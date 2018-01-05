@@ -163,7 +163,7 @@ public class FoxParameter {
 
     DE("de"), //
     ES("es"), //
-    IT("it"), //
+    IT("it"), // Italian Language
     EN("en"), //
     NL("nl"), //
     FR("fr");
