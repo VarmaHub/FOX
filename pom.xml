@@ -251,6 +251,13 @@
 			<artifactId>commons-validator</artifactId>
 			<version>1.4.0</version>
 		</dependency>
+
+		<!-- tint - Italian NER -->
+		<dependency>
+			<groupId>eu.fbk.dh</groupId>
+			<artifactId>tint-runner</artifactId>
+			<version>0.2</version>
+		</dependency>
  
 	<!-- Jena for using NIF -->
 			<dependency>
