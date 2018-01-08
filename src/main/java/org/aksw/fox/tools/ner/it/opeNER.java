@@ -1,4 +1,4 @@
-package org.aksw.fox.tools.ner.common;
+package org.aksw.fox.tools.ner.it;
 
 import opennlp.tools.util.Span;
 import org.aksw.fox.data.Entity;
