@@ -255,11 +255,12 @@
 		<!-- tint - Italian NER -->
 		<dependency>
 			<groupId>eu.fbk.dh</groupId>
-			<artifactId>tint-runner</artifactId>
+			<artifactId>tint</artifactId>
 			<version>0.2</version>
+			<type>pom</type>
 		</dependency>
- 
-	<!-- Jena for using NIF -->
+
+		<!-- Jena for using NIF -->
 			<dependency>
 			<groupId>org.apache.jena</groupId>
 			<artifactId>apache-jena</artifactId>
