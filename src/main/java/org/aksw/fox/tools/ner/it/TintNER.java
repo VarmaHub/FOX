@@ -1,5 +1,6 @@
 package org.aksw.fox.tools.ner.it;
 
+
 import edu.stanford.nlp.ling.CoreAnnotations;
 import edu.stanford.nlp.ling.CoreLabel;
 import edu.stanford.nlp.util.CoreMap;
@@ -9,9 +10,7 @@ import org.aksw.fox.data.EntityClassMap;
 import org.aksw.fox.tools.ner.AbstractNER;
 import org.aksw.fox.utils.FoxConst;
 
-import java.util.HashMap;
 import java.util.List;
-import java.util.Map;
 import java.util.Properties;
 
 /**
@@ -35,13 +34,14 @@ public class TintNER extends AbstractNER {
     private static Properties props = new Properties();
 
     static {
-        props.setProperty("annotators", "ita_toksent, tokenize, ssplit,  pos, ner, depparse, fake_dep");
+        props.setProperty("annotators", "ita_toksent, tokenize, ssplit, ita_morpho, ita_lemma,  pos, ner, depparse, fake_dep");
         props.setProperty("customAnnotatorClass.ita_toksent", "eu.fbk.dh.tint.tokenizer.annotators.ItalianTokenizerAnnotator");
         props.setProperty("customAnnotatorClass.ita_morpho", "eu.fbk.dh.digimorph.annotator.DigiMorphAnnotator");
-        props.setProperty("pos.model", "models/italian-big.tagger");
+        props.setProperty("customAnnotatorClass.ita_lemma","eu.fbk.dh.tint.digimorph.annotator.DigiLemmaAnnotator");
+        props.setProperty("pos.model", "models/italian-fast.tagger");
         props.setProperty("ner.model", "models/ner-ita-nogpe-noiob_gaz_wikipedia_sloppy.ser.gz");
-        props.setProperty("ner.useSUTime", "0");
         props.setProperty("depparse.model", "models/parser-model-1.txt.gz");
+        props.setProperty("ner.useSUTime", "0");
     }
 
 
@@ -54,16 +54,6 @@ public class TintNER extends AbstractNER {
         entityClasses.put("LOCATION", EntityClassMap.L);
         entityClasses.put("ORGANIZATION", EntityClassMap.O);
 
-    }
-
-
-    // Entity types check and mapping .. done
-    private static final Map<String, String> ENTITY_MAP = new HashMap<>();
-
-    static {
-        ENTITY_MAP.put("PER", EntityClassMap.P);
-        ENTITY_MAP.put("LOC", EntityClassMap.L);
-        ENTITY_MAP.put("ORG", EntityClassMap.O);
     }
 
     // The following code is duplicate from StanfordCommon, since TINT is based on CoreNLP expecting the retrieve method
