@@ -34,7 +34,7 @@ public class TintNER extends AbstractNER {
     private static Properties props = new Properties();
 
     static {
-        props.setProperty("annotators", "ita_toksent, tokenize, ssplit, ita_morpho, ita_lemma,  pos, ner, depparse, fake_dep");
+        props.setProperty("annotators", "ita_toksent, tokenize, ssplit, ita_lemma,  pos, ner, depparse, fake_dep");
         props.setProperty("customAnnotatorClass.ita_toksent", "eu.fbk.dh.tint.tokenizer.annotators.ItalianTokenizerAnnotator");
         props.setProperty("customAnnotatorClass.ita_morpho", "eu.fbk.dh.digimorph.annotator.DigiMorphAnnotator");
         props.setProperty("customAnnotatorClass.ita_lemma","eu.fbk.dh.tint.digimorph.annotator.DigiLemmaAnnotator");
