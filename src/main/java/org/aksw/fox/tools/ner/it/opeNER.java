@@ -1,14 +1,14 @@
 package org.aksw.fox.tools.ner.it;
 
+import opennlp.tools.namefind.NameFinderME;
+import opennlp.tools.namefind.TokenNameFinderModel;
 import opennlp.tools.util.Span;
 import org.aksw.fox.data.Entity;
 import org.aksw.fox.data.EntityClassMap;
-import org.aksw.fox.tools.ner.AbstractNER;
+import org.aksw.fox.tools.ner.common.OpenNLPCommon;
 import org.aksw.fox.utils.FoxCfg;
 import org.aksw.fox.utils.FoxConst;
 import org.aksw.fox.utils.FoxTextUtil;
-import org.vicomtech.opennlp.tools.namefind.NameFinderME;
-import org.vicomtech.opennlp.tools.namefind.TokenNameFinderModel;
 
 import java.io.FileInputStream;
 import java.io.IOException;
@@ -22,17 +22,19 @@ import java.util.List;
  * OpeNER is a language analysis toolchain helping (academic) researchers and companies make sense
  * out of “natural language analysis”.
  */
-public class opeNER extends AbstractNER {
+public class opeNER extends OpenNLPCommon {
 
     protected TokenNameFinderModel[] tokenNameFinderModels;
 
     // Italian Language Model
-    protected String[] modelPath;
+    static final String[] modelPath = {"data/opeNER-it/opener-it.bin"};
 
     public opeNER() {
+        this(modelPath);
+    }
 
-        this.modelPath = new String[]{"data/opeNER-it/opener-it.bin"};
-
+    public opeNER(final String[] modelPath) {
+        super(modelPath);
         // http://www.opener-project.eu/getting-started/#named-entity-resolution
         entityClasses.put("PERSON", EntityClassMap.P);
         entityClasses.put("LOCATION", EntityClassMap.L);

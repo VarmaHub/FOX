@@ -30,7 +30,7 @@
         <jena.version>3.1.0</jena.version>
         <agdistis.version>0.4.0</agdistis.version>
         <illinoisner.version>2.8.1</illinoisner.version>
-        <opennlp.version>1.5.3</opennlp.version>
+        <opennlp.version>1.8.4</opennlp.version>
         <tint.version>0.2</tint.version>
         <fcw.version>0.1.1</fcw.version>
         <balie.version>1.81.0</balie.version>
@@ -64,11 +64,11 @@
         <!-- external dependencies -->
         <!-- nerc-fr -->
         <dependency>
-            <groupId>opennlp-tools</groupId>
-            <artifactId>custom</artifactId>
-            <version>0.0.1</version>
-            <scope>system</scope>
-            <systemPath>${system.libs}/nerc-fr/opennlp-tools-custom-0.0.1.jar</systemPath>
+        <groupId>opennlp-tools</groupId>
+        <artifactId>custom</artifactId>
+        <version>0.0.1</version>
+        <scope>system</scope>
+        <systemPath>${system.libs}/nerc-fr/opennlp-tools-custom-0.0.1.jar</systemPath>
         </dependency>
         <!-- https://github.com/giusepperizzo/nerd4java -->
         <dependency>
