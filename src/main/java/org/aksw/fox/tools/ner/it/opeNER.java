@@ -27,7 +27,7 @@ public class opeNER extends OpenNLPCommon {
     protected TokenNameFinderModel[] tokenNameFinderModels;
 
     // Italian Language Model
-    static final String[] modelPath = {"data/opeNER-it/opener-it.bin"};
+    static final String[] modelPath = {"data/opeNER-it/ixa-opener-it.bin"};
 
     public opeNER() {
         this(modelPath);
@@ -36,10 +36,10 @@ public class opeNER extends OpenNLPCommon {
     public opeNER(final String[] modelPath) {
         super(modelPath);
         // http://www.opener-project.eu/getting-started/#named-entity-resolution
-        entityClasses.put("PERSON", EntityClassMap.P);
-        entityClasses.put("LOCATION", EntityClassMap.L);
-        entityClasses.put("ORGANISATION", EntityClassMap.O);
-        entityClasses.put("MISCELLANEOUS", EntityClassMap.N);
+        entityClasses.put("PER", EntityClassMap.P);
+        entityClasses.put("LOC", EntityClassMap.L);
+        entityClasses.put("ORG", EntityClassMap.O);
+        entityClasses.put("GPE", EntityClassMap.N);
 
         tokenNameFinderModels = new TokenNameFinderModel[modelPath.length];
         final InputStream[] modelIn = new InputStream[modelPath.length];
@@ -50,16 +50,17 @@ public class opeNER extends OpenNLPCommon {
                 if (modelIn[i] != null) {
                     tokenNameFinderModels[i] = new TokenNameFinderModel(modelIn[i]);
                 }
-
-            } catch (final IOException e) {
-                LOG.error("\n", e);
-            } finally {
+            } catch (IOException e) {
+               // LOG.error("\n", e);
+            }
+            finally {
                 try {
                     if (modelIn[i] != null) {
                         modelIn[i].close();
                     }
                 } catch (final IOException e) {
-                    LOG.error("\n", e);
+                    //LOG.error("\n", e);
+                    e.printStackTrace();
                 }
             }
         }
