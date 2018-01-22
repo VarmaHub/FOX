@@ -34,9 +34,9 @@ public class TintNER extends AbstractNER {
     private static Properties props = new Properties();
 
     static {
-        props.setProperty("annotators", "ita_toksent, tokenize, ssplit, pos, ita_morpho, ita_lemma, ner, depparse, fake_dep");
+        props.setProperty("annotators", "ita_toksent, tokenize, ssplit, pos, ita_morpho, ita_lemma, ner, depparse");
         props.setProperty("customAnnotatorClass.ita_toksent", "eu.fbk.dh.tint.tokenizer.annotators.ItalianTokenizerAnnotator");
-        props.setProperty("customAnnotatorClass.ita_morpho", "eu.fbk.dh.digimorph.annotator.DigiMorphAnnotator");
+        props.setProperty("customAnnotatorClass.ita_morpho", "eu.fbk.dh.tint.digimorph.annotator.DigiMorphAnnotator");
         props.setProperty("customAnnotatorClass.ita_lemma","eu.fbk.dh.tint.digimorph.annotator.DigiLemmaAnnotator");
         props.setProperty("pos.model", "models/italian-fast.tagger");
         props.setProperty("ner.model", "models/ner-ita-nogpe-noiob_gaz_wikipedia_sloppy.ser.gz");
