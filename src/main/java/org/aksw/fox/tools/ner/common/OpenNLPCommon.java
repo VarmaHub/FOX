@@ -1,19 +1,18 @@
 package org.aksw.fox.tools.ner.common;
 
-import java.io.FileInputStream;
-import java.io.IOException;
-import java.io.InputStream;
-import java.util.ArrayList;
-import java.util.List;
-
+import opennlp.tools.namefind.NameFinderME;
+import opennlp.tools.namefind.TokenNameFinderModel;
+import opennlp.tools.util.Span;
 import org.aksw.fox.data.Entity;
 import org.aksw.fox.data.EntityClassMap;
 import org.aksw.fox.tools.ner.AbstractNER;
 import org.aksw.fox.utils.FoxTextUtil;
 
-import opennlp.tools.namefind.NameFinderME;
-import opennlp.tools.namefind.TokenNameFinderModel;
-import opennlp.tools.util.Span;
+import java.io.FileInputStream;
+import java.io.IOException;
+import java.io.InputStream;
+import java.util.ArrayList;
+import java.util.List;
 
 public abstract class OpenNLPCommon extends AbstractNER {
 
@@ -39,7 +38,7 @@ public abstract class OpenNLPCommon extends AbstractNER {
         }
 
       } catch (final IOException e) {
-        LOG.error("\n", e);
+       // LOG.error("\n", e);
       } finally {
         try {
           if (modelIn[i] != null) {

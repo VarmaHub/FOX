@@ -1,5 +1,6 @@
 package org.aksw.fox.tools.ner.it;
 
+
 import opennlp.tools.namefind.NameFinderME;
 import opennlp.tools.namefind.TokenNameFinderModel;
 import opennlp.tools.util.Span;
@@ -25,7 +26,6 @@ import java.util.List;
 public class opeNER extends OpenNLPCommon {
 
     protected TokenNameFinderModel[] tokenNameFinderModels;
-
     // Italian Language Model
     static final String[] modelPath = {"data/opeNER-it/ixa-opener-it.bin"};
 
@@ -35,6 +35,7 @@ public class opeNER extends OpenNLPCommon {
 
     public opeNER(final String[] modelPath) {
         super(modelPath);
+
         // http://www.opener-project.eu/getting-started/#named-entity-resolution
         entityClasses.put("PER", EntityClassMap.P);
         entityClasses.put("LOC", EntityClassMap.L);
@@ -50,25 +51,23 @@ public class opeNER extends OpenNLPCommon {
                 if (modelIn[i] != null) {
                     tokenNameFinderModels[i] = new TokenNameFinderModel(modelIn[i]);
                 }
-            } catch (IOException e) {
-               // LOG.error("\n", e);
-            }
-            finally {
+
+            } catch (final IOException e) {
+                LOG.error("\n", e);
+            } finally {
                 try {
                     if (modelIn[i] != null) {
                         modelIn[i].close();
                     }
                 } catch (final IOException e) {
-                    //LOG.error("\n", e);
-                    e.printStackTrace();
+                    LOG.error("\n", e);
                 }
             }
         }
     }
 
-
     @Override
-    public List<Entity> retrieve(String input) {
+    public List<Entity> retrieve(final String input) {
         LOG.info("retrieve ...");
 
         final List<Entity> list = new ArrayList<>();
@@ -121,6 +120,7 @@ public class opeNER extends OpenNLPCommon {
     }
 
     public static void main(final String[] a) {
+
         LOG.info(new opeNER().retrieve(FoxConst.NER_IT_EXAMPLE_1));
     }
 }
