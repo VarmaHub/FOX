@@ -89,8 +89,8 @@
     <orderEntry type="library" name="Maven: edu.stanford.nlp:stanford-corenlp:models-spanish:3.8.0" level="project" />
     <orderEntry type="library" name="Maven: edu.stanford.nlp:stanford-corenlp:models-german:3.8.0" level="project" />
     <orderEntry type="library" name="Maven: org.apache.commons:commons-compress:1.0" level="project" />
-    <orderEntry type="library" name="Maven: org.apache.opennlp:opennlp-tools:1.8.0" level="project" />
-    <orderEntry type="library" name="Maven: org.apache.opennlp:opennlp-uima:1.8.0" level="project" />
+    <orderEntry type="library" name="Maven: org.apache.opennlp:opennlp-tools:1.6.0" level="project" />
+    <orderEntry type="library" name="Maven: org.apache.opennlp:opennlp-uima:1.6.0" level="project" />
     <orderEntry type="library" name="Maven: org.apache.opennlp:opennlp-maxent:3.0.3" level="project" />
     <orderEntry type="library" name="Maven: commons-validator:commons-validator:1.4.0" level="project" />
     <orderEntry type="library" name="Maven: commons-beanutils:commons-beanutils:1.8.3" level="project" />

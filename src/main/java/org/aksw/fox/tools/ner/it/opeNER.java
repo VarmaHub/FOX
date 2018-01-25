@@ -36,7 +36,12 @@ public class opeNER extends OpenNLPCommon {
     public opeNER(final String[] modelPath) {
         super(modelPath);
 
-        // http://www.opener-project.eu/getting-started/#named-entity-resolution
+//        // For opener-it model: http://www.opener-project.eu/getting-started/#named-entity-resolution
+//        entityClasses.put("PERSON", EntityClassMap.P);
+//        entityClasses.put("LOCATION", EntityClassMap.L);
+//        entityClasses.put("ORGANIZATION", EntityClassMap.O);
+//        entityClasses.put("MISCELLANEOUS", EntityClassMap.N);
+        
         entityClasses.put("PER", EntityClassMap.P);
         entityClasses.put("LOC", EntityClassMap.L);
         entityClasses.put("ORG", EntityClassMap.O);
