@@ -37,7 +37,7 @@ public class TintNER extends AbstractNER {
         props.setProperty("annotators", "ita_toksent, tokenize, ssplit, pos, ita_morpho, ita_lemma, ner, depparse");
         props.setProperty("customAnnotatorClass.ita_toksent", "eu.fbk.dh.tint.tokenizer.annotators.ItalianTokenizerAnnotator");
         props.setProperty("customAnnotatorClass.ita_morpho", "eu.fbk.dh.tint.digimorph.annotator.DigiMorphAnnotator");
-        props.setProperty("customAnnotatorClass.ita_lemma","eu.fbk.dh.tint.digimorph.annotator.DigiLemmaAnnotator");
+        props.setProperty("customAnnotatorClass.ita_lemma", "eu.fbk.dh.tint.digimorph.annotator.DigiLemmaAnnotator");
         props.setProperty("pos.model", "models/italian-fast.tagger");
         props.setProperty("ner.model", "models/ner-ita-nogpe-noiob_gaz_wikipedia_sloppy.ser.gz");
         props.setProperty("depparse.model", "models/parser-model-1.txt.gz");
@@ -50,9 +50,9 @@ public class TintNER extends AbstractNER {
     private TintNER() {
         pipeline = new TintPipeline(props);
 
-        entityClasses.put("PERSON", EntityClassMap.P);
-        entityClasses.put("LOCATION", EntityClassMap.L);
-        entityClasses.put("ORGANIZATION", EntityClassMap.O);
+        entityClasses.put("PER", EntityClassMap.P);
+        entityClasses.put("LOC", EntityClassMap.L);
+        entityClasses.put("ORG", EntityClassMap.O);
 
     }
 
@@ -103,5 +103,8 @@ public class TintNER extends AbstractNER {
 
     public static void main(final String[] a) {
         LOG.info(new TintNER().retrieve(FoxConst.NER_IT_EXAMPLE_1));
+//        TintNER tinter = new TintNER();
+//        List lister = tinter.retrieve(FoxConst.NER_IT_EXAMPLE_1);
+//        System.out.println(lister.size());
     }
 }
