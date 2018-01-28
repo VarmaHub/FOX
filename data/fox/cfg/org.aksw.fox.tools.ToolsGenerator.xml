@@ -41,11 +41,9 @@
 
                 it="
             org.aksw.fox.tools.ner.it.SpotlightIT,
-            org.aksw.fox.tools.ner.it.TagMeIT, 
-            org.aksw.fox.tools.ner.it.TextProIT
-            org.askw.fox.tools.ner.it.opeNER
             org.askw.fox.tools.ner.it.TintNER
             "
+
 
                 nl="
             org.aksw.fox.tools.ner.nl.OpenNLPNL,
@@ -58,7 +56,7 @@
                 en="org.aksw.fox.tools.ner.en.StanfordEN"
                 es="org.aksw.fox.tools.ner.es.StanfordES"
                 fr="org.aksw.fox.tools.ner.fr.OpenNLPFR"
-                it="org.aksw.fox.tools.ner.it.TagMeIT"
+                it="org.aksw.fox.tools.ner.it.TintNER"
                 nl="org.aksw.fox.tools.ner.nl.OpenNLPNL"
         />
     </toolsGenerator>
