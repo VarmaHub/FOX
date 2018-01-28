@@ -61,7 +61,7 @@ if [ ! -d "$DIRECTORY" ]; then
 
 
 	echo "Downloaded Spotlight data."
-ō
+
 	cd ..
 
 fi

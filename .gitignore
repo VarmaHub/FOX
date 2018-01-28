@@ -26,6 +26,7 @@
 /docker/en/agdistis/*
 /docker/en/spotlight/*
 /out/*
+/spotlight/*
 /agdistis/*
 /it/*
 /dbpedia-spotlight-0.7.1.jar
