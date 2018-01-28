@@ -19,7 +19,7 @@ if [ ! -d "$DIRECTORY" ]; then
 #	wget http://downloads.dbpedia-spotlight.org/2016-04/es/model/es.tar.gz
 #	wget http://downloads.dbpedia-spotlight.org/2016-04/fr/model/fr.tar.gz
 #	wget http://downloads.dbpedia-spotlight.org/2016-04/nl/model/nl.tar.gz
-	wget http://downloads.dbpedia-spotlight.org/2016-04/nl/model/it.tar.gz
+	wget http://downloads.dbpedia-spotlight.org/2016-04/it/model/it.tar.gz
 
 
 
@@ -56,7 +56,7 @@ if [ ! -d "$DIRECTORY" ]; then
 #	chmod +x runNL.sh
 
 	touch runIT.sh
-	echo "nohup java -Xmx4G -Dfile.encoding=utf-8 -jar dbpedia-spotlight-0.7.1.jar it http://localhost:4445/rest  > logIT.log &">> runIT.sh
+	echo "nohup java -Xmx4G -Dfile.encoding=utf-8 -jar dbpedia-spotlight-0.7.1.jar it http://localhost:4445/  > logIT.log &">> runIT.sh
 	chmod +x runIT.sh
 
 
