@@ -21,7 +21,7 @@ import java.util.Properties;
  * The tool is based on Stanford CoreNLP.
  */
 
-public class TintNER extends AbstractNER {
+public class TintNERIT extends AbstractNER {
 
 
     /**
@@ -47,7 +47,7 @@ public class TintNER extends AbstractNER {
 
     protected TintPipeline pipeline = null;
 
-    public TintNER() {
+    public TintNERIT() {
         pipeline = new TintPipeline(props);
 
         entityClasses.put("PER", EntityClassMap.P);
@@ -102,7 +102,7 @@ public class TintNER extends AbstractNER {
     }
 
     public static void main(final String[] a) {
-        LOG.info(new TintNER().retrieve(FoxConst.NER_IT_EXAMPLE_1));
+        LOG.info(new TintNERIT().retrieve(FoxConst.NER_IT_EXAMPLE_1));
 //        TintNER tinter = new TintNER();
 //        List lister = tinter.retrieve(FoxConst.NER_IT_EXAMPLE_1);
 //        System.out.println(lister.size());

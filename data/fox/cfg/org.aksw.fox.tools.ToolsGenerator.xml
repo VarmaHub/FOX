@@ -41,7 +41,7 @@
 
                 it="
             org.aksw.fox.tools.ner.it.SpotlightIT,
-            org.askw.fox.tools.ner.it.TintNER
+            org.aksw.fox.tools.ner.it.TintNERIT
             "
 
 
@@ -56,7 +56,7 @@
                 en="org.aksw.fox.tools.ner.en.StanfordEN"
                 es="org.aksw.fox.tools.ner.es.StanfordES"
                 fr="org.aksw.fox.tools.ner.fr.OpenNLPFR"
-                it="org.aksw.fox.tools.ner.it.TintNER"
+                it="org.aksw.fox.tools.ner.it.TintNERIT"
                 nl="org.aksw.fox.tools.ner.nl.OpenNLPNL"
         />
     </toolsGenerator>
