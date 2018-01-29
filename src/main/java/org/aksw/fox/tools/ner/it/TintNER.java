@@ -47,7 +47,7 @@ public class TintNER extends AbstractNER {
 
     protected TintPipeline pipeline = null;
 
-    private TintNER() {
+    public TintNER() {
         pipeline = new TintPipeline(props);
 
         entityClasses.put("PER", EntityClassMap.P);
